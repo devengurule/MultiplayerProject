@@ -12,14 +12,14 @@ TagManager:
   - Water
   - UI
   - Floor
-  - Player1
-  - Player2
-  - Player1Light
-  - Player2Light
-  - Player1Walls
-  - Player2Walls
-  - 
-  - 
+  - P1
+  - P2
+  - P1Flashlight
+  - P2Flashlight
+  - P1GeneralLights
+  - P2GeneralLights
+  - P1Walls
+  - P2Walls
   - 
   - 
   - 
@@ -43,10 +43,10 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - Players
+  - Player1
+  - Player2
   - Walls
   - Floor
-  - Light Layer 4
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
