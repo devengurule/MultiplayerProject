@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
         Turning();
-        Debug.Log(rb.angularVelocity.magnitude);
     }
 
     private void Movement()

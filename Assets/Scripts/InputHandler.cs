@@ -5,6 +5,8 @@ public class InputHandler : MonoBehaviour
 {
     public float movingInput { get; private set; }
     public float turningInput { get; private set; }
+    public bool flashlightToggle { get; private set; }
+
     private Controls controls;
     private PlayerInfo playerInfo;
 
@@ -17,6 +19,8 @@ public class InputHandler : MonoBehaviour
             bindingMask = InputBinding.MaskByGroup(playerInfo.playerSlot.ToString())
         };
 
+        flashlightToggle = true;
+
         //controls.Player.Move.performed += OnMovePerformed;
         //controls.Player.Move.canceled += OnMoveCanceled;
 
@@ -25,6 +29,8 @@ public class InputHandler : MonoBehaviour
 
         controls.Player.Turning.performed += OnTurningPerformed;
         controls.Player.Turning.canceled += OnTurningCancelled;
+
+        controls.Player.Flashlight.canceled += OnFlashlightCancelled;
     }
 
     private void OnEnable()
@@ -63,5 +69,10 @@ public class InputHandler : MonoBehaviour
     private void OnTurningCancelled(InputAction.CallbackContext context)
     {
         turningInput = 0f;
+    }
+
+    private void OnFlashlightCancelled(InputAction.CallbackContext context)
+    {
+        flashlightToggle = !flashlightToggle;
     }
 }
