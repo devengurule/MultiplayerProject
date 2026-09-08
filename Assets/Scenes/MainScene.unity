@@ -2044,6 +2044,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 781453560783908799, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 781453560783908799, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1739387608580023749, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_RenderingLayersMask.m_Bits
       value: 253
@@ -2087,6 +2095,18 @@ PrefabInstance:
     - target: {fileID: 6706285903319564424, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046641657119551230, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: turnSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046641657119551230, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: angularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046641657119551230, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: maxTurnSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7900135989589629895, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
@@ -2853,6 +2873,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 781453560783908799, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 781453560783908799, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1739387608580023749, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_RenderingLayersMask.m_Bits
       value: 251
@@ -2884,6 +2912,18 @@ PrefabInstance:
     - target: {fileID: 6706285903319564424, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 9727
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046641657119551230, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: turnSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046641657119551230, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: angularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046641657119551230, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: maxTurnSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7900135989589629895, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer

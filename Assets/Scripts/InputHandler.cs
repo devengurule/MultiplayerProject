@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    public Vector2 movingInput { get; private set; }
-    public Vector2 turningInput { get; private set; }
+    public float movingInput { get; private set; }
+    public float turningInput { get; private set; }
     private Controls controls;
     private PlayerInfo playerInfo;
 
@@ -48,20 +48,20 @@ public class InputHandler : MonoBehaviour
 
     private void OnMovingPerformed(InputAction.CallbackContext context)
     {
-        movingInput = context.ReadValue<Vector2>();
+        movingInput = context.ReadValue<float>();
     }
     private void OnMovingCancelled(InputAction.CallbackContext context)
     {
-        movingInput = Vector2.zero;
+        movingInput = 0f;
     }
 
 
     private void OnTurningPerformed(InputAction.CallbackContext context)
     {
-        turningInput = context.ReadValue<Vector2>();
+        turningInput = context.ReadValue<float>();
     }
     private void OnTurningCancelled(InputAction.CallbackContext context)
     {
-        turningInput = Vector2.zero;
+        turningInput = 0f;
     }
 }
