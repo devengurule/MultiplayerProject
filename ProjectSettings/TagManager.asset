@@ -8,16 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Wall
+  - UniversalWalls
   - Water
   - UI
   - Floor
-  - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player1
+  - Player2
+  - Player1Light
+  - Player2Light
+  - Player1Walls
+  - Player2Walls
   - 
   - 
   - 
@@ -43,9 +43,9 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
+  - Players
+  - Walls
+  - Floor
   - Light Layer 4
   - Light Layer 5
   - Light Layer 6

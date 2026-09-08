@@ -21,7 +21,5 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 moveVector = new(input.moveInput.x, 0, input.moveInput.y);
         rb.linearVelocity = moveVector * moveSpeed;
-
-        Debug.Log(rb.linearVelocity);
     }
 }
