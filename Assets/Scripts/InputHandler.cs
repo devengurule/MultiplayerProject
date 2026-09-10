@@ -21,9 +21,6 @@ public class InputHandler : MonoBehaviour
 
         flashlightToggle = true;
 
-        //controls.Player.Move.performed += OnMovePerformed;
-        //controls.Player.Move.canceled += OnMoveCanceled;
-
         controls.Player.Moving.performed += OnMovingPerformed;
         controls.Player.Moving.canceled += OnMovingCancelled;
 
@@ -31,6 +28,8 @@ public class InputHandler : MonoBehaviour
         controls.Player.Turning.canceled += OnTurningCancelled;
 
         controls.Player.Flashlight.canceled += OnFlashlightCancelled;
+
+        controls.Player.Shoot.performed += OnShootPerformed;
     }
 
     private void OnEnable()
@@ -41,16 +40,6 @@ public class InputHandler : MonoBehaviour
     {
         controls.Disable();
     }
-
-    //private void OnMovePerformed(InputAction.CallbackContext context)
-    //{
-    //    moveInput = context.ReadValue<Vector2>();
-    //}
-
-    //private void OnMoveCanceled(InputAction.CallbackContext context)
-    //{
-    //    moveInput = Vector2.zero;
-    //}
 
     private void OnMovingPerformed(InputAction.CallbackContext context)
     {
@@ -74,5 +63,10 @@ public class InputHandler : MonoBehaviour
     private void OnFlashlightCancelled(InputAction.CallbackContext context)
     {
         flashlightToggle = !flashlightToggle;
+    }
+
+    private void OnShootPerformed(InputAction.CallbackContext context)
+    {
+        GetComponent<Gun>().SpawnBullet();
     }
 }

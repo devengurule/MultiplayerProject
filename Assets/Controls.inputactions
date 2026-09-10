@@ -41,6 +41,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "90201024-285a-4e31-8fa0-a9a60f5ceb0b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -399,7 +408,7 @@
                 {
                     "name": "",
                     "id": "f8d6770c-9d9c-42b1-9eeb-dc49e91eca97",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/slash",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Player2",
@@ -415,6 +424,28 @@
                     "processors": "",
                     "groups": ";Player1",
                     "action": "Flashlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ca05537-3085-4db3-b099-c094f5d7a4ae",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player1",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d328c42-129f-4628-a42f-ff9ce2d0458c",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Player2",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
