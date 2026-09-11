@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Wall
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - P2GeneralLights
   - P1Walls
   - P2Walls
-  - 
+  - Bullet
   - 
   - 
   - 
