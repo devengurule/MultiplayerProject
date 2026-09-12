@@ -4900,6 +4900,8 @@ GameObject:
   - component: {fileID: 859329506}
   - component: {fileID: 859329507}
   - component: {fileID: 859329508}
+  - component: {fileID: 859329509}
+  - component: {fileID: 859329510}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4953,6 +4955,32 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 24960
   gridDimensions: {x: 37, y: 37}
+--- !u!114 &859329509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859329505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f30bb5eda22f544286da9c51819746a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  p1Text: {fileID: 1927375660}
+  p2Text: {fileID: 916956623}
+--- !u!114 &859329510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859329505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe690d6d62cfe9f478491183780b355d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameController
 --- !u!1 &869016793
 GameObject:
   m_ObjectHideFlags: 0

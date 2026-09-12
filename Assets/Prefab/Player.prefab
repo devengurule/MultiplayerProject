@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 6606379369613366024}
   - component: {fileID: 3604955440759225905}
   - component: {fileID: 715979171715096573}
+  - component: {fileID: 6738004219998830884}
   m_Layer: 7
   m_Name: Body
   m_TagString: Player
@@ -351,6 +352,18 @@ MonoBehaviour:
   bulletCooldown: 1
   spawnPos: {fileID: 8177891722828750584}
   bulletPrefab: {fileID: 7432820862678121846, guid: 752025dcaea662649a3d8d5d08c826a0, type: 3}
+--- !u!114 &6738004219998830884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686872149144025240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceebc1dc4ff1a3045a225227836b08fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinCollector
 --- !u!1 &724599570149526253
 GameObject:
   m_ObjectHideFlags: 0
