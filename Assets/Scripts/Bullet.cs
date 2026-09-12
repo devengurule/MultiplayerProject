@@ -40,8 +40,9 @@ public class Bullet : MonoBehaviour
     {
         gameObject.GetComponent<SphereCollider>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;        
         bulletLight.enabled = false;
-
+        
         StartCoroutine(PlayDeathParticles());
     }
 
