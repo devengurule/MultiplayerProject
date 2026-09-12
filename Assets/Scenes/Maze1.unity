@@ -5264,15 +5264,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 250bf4013d701ae46a7f70f0aaa36c97, type: 2}
+  m_sharedMaterial: {fileID: -1783309649632517856, guid: 250bf4013d701ae46a7f70f0aaa36c97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4283321934
+  m_fontColor: {r: 0.30588236, g: 0.30588236, b: 0.30588236, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9246,6 +9246,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayersMask.m_Bits
       value: 253
       objectReference: {fileID: 0}
+    - target: {fileID: 2983778995813944113, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3847062204381192802, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -10836,17 +10840,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: 02
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 250bf4013d701ae46a7f70f0aaa36c97, type: 2}
+  m_sharedMaterial: {fileID: -1783309649632517856, guid: 250bf4013d701ae46a7f70f0aaa36c97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4283321934
+  m_fontColor: {r: 0.3056603, g: 0.3056603, b: 0.3056603, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12017,6 +12021,10 @@ PrefabInstance:
     - target: {fileID: 1739387608580023749, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_RenderingLayersMask.m_Bits
       value: 251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983778995813944113, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4951388128225219126, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_CullingMask.m_Bits
