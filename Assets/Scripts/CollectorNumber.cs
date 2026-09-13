@@ -7,7 +7,6 @@ public class CollectorNumber : MonoBehaviour
     [SerializeField] private float alphaLossRate;
 
     private RectTransform rectTranform;
-
     private TextMeshProUGUI text;
 
     private void Awake()
@@ -19,9 +18,10 @@ public class CollectorNumber : MonoBehaviour
     private void FixedUpdate()
     {
         rectTranform.anchoredPosition += Vector2.up * verticalMoveSpeed;
+        
         text.alpha -= alphaLossRate;
 
-        if(text.alpha <= 0f)
+        if (text.alpha <= 0f)
         {
             Destroy(gameObject);
         }
