@@ -147,6 +147,8 @@ GameObject:
   - component: {fileID: 3604955440759225905}
   - component: {fileID: 715979171715096573}
   - component: {fileID: 6738004219998830884}
+  - component: {fileID: 7486963233040594879}
+  - component: {fileID: 7356810897477167903}
   m_Layer: 7
   m_Name: Body
   m_TagString: Player
@@ -308,9 +310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
-  turnSpeed: 0
-  maxTurnSpeed: 0
-  angularDrag: 0
+  turnSpeed: 3
+  maxTurnSpeed: 2
+  angularDrag: 0.5
+  knockbackForce: 1
 --- !u!114 &6606379369613366024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +369,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinCollector
   floatNumberController: {fileID: 0}
+--- !u!114 &7486963233040594879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686872149144025240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77de8d782f257c44b8d5e4ec8c58e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  vignetterMaterial: {fileID: 2100000, guid: 847f3626ee7516541ade1630a195810b, type: 2}
+--- !u!114 &7356810897477167903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686872149144025240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fc7762b8a0c034eb38719d7649f036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StunController
+  lightStunDuration: 1
+  heavyStunDuration: 5
+  heavyStunParticles: {fileID: 175591960132686010}
+  heavyParticlesDelayCount: 5
 --- !u!1 &724599570149526253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1186,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -1220,8 +1252,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 1
+      scalar: 2.5
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2873,7 +2905,7 @@ ParticleSystem:
     orbitalZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2

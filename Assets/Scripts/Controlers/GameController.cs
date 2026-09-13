@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [field: SerializeField] public int maxPlayerHealth { get; private set; }
+    [field: SerializeField] public int bulletDamage { get; private set; }
+    [field: SerializeField] public float knockbackForce { get; private set; }
+
     public static GameController instance;
 
     private void Awake()

@@ -1,16 +1,29 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Material vignetterMaterial;
+    private int health;
+
+    private void Start()
     {
-        
+        health = GameController.instance.maxPlayerHealth;
+
+        vignetterMaterial.SetFloat("_Alpha", 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeHealth(int amount)
     {
-        
+        health += amount;
+
+        if (health <= 0)
+        {
+            GetComponent<StunController>().HeavyStun();
+        }
+        else
+        {
+            GetComponent<StunController>().LightStun();
+        }
     }
 }

@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416a246b42f347b42958bf62b99996ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  damage: 1
   deathParticles: {fileID: 7683854769704017059}
   bulletLight: {fileID: 4322941459997129021}
 --- !u!1 &8209082673699937063

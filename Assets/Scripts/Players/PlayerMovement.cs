@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float turnSpeed;
     [SerializeField] private float maxTurnSpeed;
     [SerializeField] private float angularDrag;
+    [SerializeField] private float knockbackForce;
+
     private InputHandler input;
     private Rigidbody rb;
     
@@ -17,8 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();
-        Turning();
+        if (!GetComponent<StunController>().isStunned)
+        {
+            Movement();
+            Turning();
+        }
     }
 
     private void Movement()
@@ -41,5 +46,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Mathf.Abs(rb.angularVelocity.magnitude) > maxTurnSpeed) rb.angularVelocity = rb.angularVelocity.normalized * maxTurnSpeed;
+    }
+
+    public void Knockback(Vector3 direction, float force)
+    {
+        rb.AddForce((direction * force) + rb.linearVelocity.normalized, ForceMode.Impulse);
     }
 }

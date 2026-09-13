@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -29,6 +28,11 @@ public class Bullet : MonoBehaviour
 
                 break;
             case "Player":
+
+                Vector3 knockbackDirection = (other.gameObject.transform.position - transform.position).normalized;
+
+                other.gameObject.GetComponent<Health>().ChangeHealth(-GameController.instance.bulletDamage);
+                other.gameObject.GetComponent<PlayerMovement>().Knockback(knockbackDirection, GameController.instance.knockbackForce);
 
                 DestroySequence();
 
