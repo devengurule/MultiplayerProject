@@ -27,7 +27,7 @@ public class StunController : MonoBehaviour
         {
             GetComponent<InputHandler>().enabled = false;
             heavyStunParticles.Play();
-            stunnedTimerCoroutine = StartCoroutine(StunTimer(lightStunDuration, true));
+            stunnedTimerCoroutine = StartCoroutine(StunTimer(heavyStunDuration, true));
         }
     }
 
@@ -60,6 +60,8 @@ public class StunController : MonoBehaviour
             {
                 yield return null;
             }
+
+            GetComponent<Health>().ResetHealth();
         }
 
         isStunned = false;

@@ -34,11 +34,17 @@ public class InputHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        controls.Enable();
+        if (controls != null)
+        {
+            controls.Enable();
+        }
     }
     private void OnDisable()
     {
-        controls.Disable();
+        if (controls != null)
+        {
+            controls.Disable();
+        }
     }
 
     private void OnMovingPerformed(InputAction.CallbackContext context)

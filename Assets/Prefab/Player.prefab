@@ -244,8 +244,8 @@ Rigidbody:
   m_GameObject: {fileID: 686872149144025240}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.5
+  m_LinearDamping: 1
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -260,7 +260,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!136 &4671976575593305625
 CapsuleCollider:
@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77de8d782f257c44b8d5e4ec8c58e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  vignettePowerMinMax: {x: 0, y: 0}
   vignetterMaterial: {fileID: 2100000, guid: 847f3626ee7516541ade1630a195810b, type: 2}
 --- !u!114 &7356810897477167903
 MonoBehaviour:

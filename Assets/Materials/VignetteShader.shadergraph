@@ -708,8 +708,8 @@
     "m_FloatType": 1,
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
-        "x": 4.0,
-        "y": 8.0
+        "x": 0.0,
+        "y": 100.0
     },
     "m_SliderType": 0,
     "m_SliderPower": 3.0,
