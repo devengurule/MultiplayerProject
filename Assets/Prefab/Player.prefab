@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   bulletVelocity: 10
-  bulletCooldown: 1
+  bulletCooldown: 0.5
   spawnPos: {fileID: 8177891722828750584}
   bulletPrefab: {fileID: 7432820862678121846, guid: 752025dcaea662649a3d8d5d08c826a0, type: 3}
 --- !u!114 &6738004219998830884
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77de8d782f257c44b8d5e4ec8c58e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  vignettePowerMinMax: {x: 0, y: 0}
+  vignettePowerMinMax: {x: 2, y: 10}
   vignetteMaterial: {fileID: 0}
 --- !u!114 &7356810897477167903
 MonoBehaviour:
@@ -565,6 +565,7 @@ MonoBehaviour:
   collectorPopupPrefab: {fileID: 4157437222631378267, guid: 0ee5f271a2a26c74d856ab7522585c54, type: 3}
   lossPopupPrefab: {fileID: 4157437222631378267, guid: 3b1c259b07f27184d886aa2c65c9b779, type: 3}
   targetObject: {fileID: 686872149144025240}
+  spawnPosRange: {x: -0.5, y: 0.5}
 --- !u!1 &2628193689421363557
 GameObject:
   m_ObjectHideFlags: 0
