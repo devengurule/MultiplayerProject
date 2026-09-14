@@ -9407,7 +9407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6706285903319564424, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 50175
+      value: 2147327
       objectReference: {fileID: 0}
     - target: {fileID: 6706285903319564424, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -12273,7 +12273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6706285903319564424, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 42495
+      value: 2139647
       objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: collectorPopupPrefab

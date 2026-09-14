@@ -56,4 +56,19 @@ public class CoinCounterController : MonoBehaviour
                 break;
         }
     }
+
+    public int RequestCoinAmount(PlayerSlotEnum playerID)
+    {
+        switch (playerID)
+        {
+            case PlayerSlotEnum.Player1:
+
+                return p1Counter;
+
+            case PlayerSlotEnum.Player2:
+
+                return p2Counter;
+        }
+        return -99;
+    }
 }

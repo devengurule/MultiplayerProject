@@ -368,6 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceebc1dc4ff1a3045a225227836b08fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinCollector
+  coinPrefab: {fileID: 241734834528765025, guid: 94a64adaa8e178c448c950193ae3e69f, type: 3}
+  coinEjectForce: {x: 1, y: 3}
   floatNumberController: {fileID: 0}
 --- !u!114 &7486963233040594879
 MonoBehaviour:
@@ -382,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   vignettePowerMinMax: {x: 0, y: 0}
-  vignetterMaterial: {fileID: 2100000, guid: 847f3626ee7516541ade1630a195810b, type: 2}
+  vignetteMaterial: {fileID: 0}
 --- !u!114 &7356810897477167903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,6 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   collectorPopupPrefab: {fileID: 4157437222631378267, guid: 0ee5f271a2a26c74d856ab7522585c54, type: 3}
+  lossPopupPrefab: {fileID: 4157437222631378267, guid: 3b1c259b07f27184d886aa2c65c9b779, type: 3}
   targetObject: {fileID: 686872149144025240}
 --- !u!1 &3847062204381192802
 GameObject:

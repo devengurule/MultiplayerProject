@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,13 +11,15 @@ public class StunController : MonoBehaviour
 
     public bool isStunned { get; private set; }
     private Coroutine stunnedTimerCoroutine;
+    public event Action OnLightStun;
+    public event Action OnHeavyStun;
 
     public void LightStun()
     {
         if (!isStunned)
         {
+            OnLightStun?.Invoke();
             GetComponent<InputHandler>().enabled = false;
-
             stunnedTimerCoroutine = StartCoroutine(StunTimer(lightStunDuration, false));
         }
     }
@@ -25,6 +28,7 @@ public class StunController : MonoBehaviour
     {
         if (!isStunned)
         {
+            OnHeavyStun?.Invoke();
             GetComponent<InputHandler>().enabled = false;
             heavyStunParticles.Play();
             stunnedTimerCoroutine = StartCoroutine(StunTimer(heavyStunDuration, true));
