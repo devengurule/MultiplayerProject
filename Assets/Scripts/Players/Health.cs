@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     private int health;
     private float currentVignettePower;
     private float currentVignetteAlpha;
+    private bool isInvulnerable;
     private Coroutine alphaChange;
     private Coroutine powerChange;
 
@@ -27,9 +28,13 @@ public class Health : MonoBehaviour
     public void ChangeHealth(int amount)
     {
         if (GetComponent<StunController>().isStunned) return;
+        if (isInvulnerable) return;
 
         health += amount;
         UpdateVignette();
+
+        isInvulnerable = true;
+
         if (health <= 0)
         {
             GetComponent<StunController>().HeavyStun();
@@ -117,5 +122,10 @@ public class Health : MonoBehaviour
     {
         health = GameController.instance.maxPlayerHealth;
         UpdateVignette();
+    }
+
+    public void ResetVulnerability()
+    {
+        isInvulnerable = false;
     }
 }

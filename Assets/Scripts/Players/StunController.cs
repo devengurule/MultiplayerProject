@@ -70,6 +70,7 @@ public class StunController : MonoBehaviour
 
         isStunned = false;
         GetComponent<InputHandler>().enabled = true;
+        GetComponent<Health>().ResetVulnerability();
         StopCoroutine(stunnedTimerCoroutine);
     }
 }

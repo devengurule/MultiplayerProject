@@ -3,6 +3,7 @@ using UnityEngine;
 public class CoinCollector : MonoBehaviour
 {
     [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private GameObject coinFolder;
     [SerializeField] private Vector2 coinEjectForce;
     [SerializeField] private FloatNumberController floatNumberController;
 
@@ -47,6 +48,7 @@ public class CoinCollector : MonoBehaviour
         {
             GameObject coin = Instantiate(coinPrefab, new(transform.position.x, 0.25f, transform.position.z), Quaternion.identity);
             coin.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized * Random.Range(coinEjectForce.x, coinEjectForce.y), ForceMode.Impulse);
+            coin.transform.parent = coinFolder.transform;
         }
     }
 }

@@ -9414,6 +9414,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: coinFolder
+      value: 
+      objectReference: {fileID: 1779445090}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: floatNumberController
       value: 
       objectReference: {fileID: 1888707405}
@@ -12275,6 +12279,10 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 2139647
       objectReference: {fileID: 0}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: coinFolder
+      value: 
+      objectReference: {fileID: 1779445090}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: collectorPopupPrefab
       value: 
