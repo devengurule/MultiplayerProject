@@ -20,6 +20,10 @@ public class GameTimerController : MonoBehaviour
     [SerializeField] private float transitionTime;
     [SerializeField] private RectTransform activePos;
 
+    [Header("Fill Timer Extras")]
+    [SerializeField] private Color startColor;
+    [SerializeField] private Color endColor;
+
     private float maxSeconds;
     private float currentSeconds;
     private Coroutine masterTimer;
@@ -67,6 +71,9 @@ public class GameTimerController : MonoBehaviour
 
             rightFill.fillAmount = fillAmount;
             leftFill.fillAmount = fillAmount;
+
+            rightFill.color = Color.Lerp(endColor, startColor, fillAmount);
+            leftFill.color = Color.Lerp(endColor, startColor, fillAmount);
 
             yield return null;
         }

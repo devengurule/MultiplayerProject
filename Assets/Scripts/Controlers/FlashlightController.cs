@@ -17,6 +17,7 @@ public class FlashlightController : MonoBehaviour
 
     private void toggleFlashlight()
     {
+        if (flashlight == null) return;
         if (input.flashlightToggle == true) flashlight.SetActive(true);
         else flashlight.SetActive(false);
     }
