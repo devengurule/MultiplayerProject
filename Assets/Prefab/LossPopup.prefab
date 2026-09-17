@@ -150,5 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fa8eeee621b0343a8425cc5fd43447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  verticalMoveSpeed: -0.05
-  alphaLossRate: 0.05
+  verticalMoveSpeed: -0.01
+  alphaLossRate: 0.01

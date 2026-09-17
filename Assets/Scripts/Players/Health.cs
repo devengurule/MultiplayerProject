@@ -25,6 +25,12 @@ public class Health : MonoBehaviour
         vignetteMaterial.SetFloat("_Power", currentVignettePower);
     }
 
+    private void OnDisable()
+    {
+        vignetteMaterial.SetFloat("_Alpha", 0);
+        vignetteMaterial.SetFloat("_Power", vignettePowerMinMax.y);
+    }
+
     public void ChangeHealth(int amount)
     {
         if (GetComponent<StunController>().isStunned) return;
