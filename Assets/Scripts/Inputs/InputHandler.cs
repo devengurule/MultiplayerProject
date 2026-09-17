@@ -34,6 +34,8 @@ public class InputHandler : MonoBehaviour
 
     private void OnEnable()
     {
+        GameTimerController.timerEnded += OnGameEnd;
+
         if (controls != null)
         {
             controls.Enable();
@@ -41,6 +43,8 @@ public class InputHandler : MonoBehaviour
     }
     private void OnDisable()
     {
+        GameTimerController.timerEnded -= OnGameEnd;
+
         if (controls != null)
         {
             controls.Disable();
@@ -74,5 +78,10 @@ public class InputHandler : MonoBehaviour
     private void OnShootPerformed(InputAction.CallbackContext context)
     {
         GetComponent<Gun>().SpawnBullet();
+    }
+
+    private void OnGameEnd()
+    {
+        gameObject.SetActive(false);
     }
 }

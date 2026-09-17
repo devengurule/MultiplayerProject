@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class GameTimerController : MonoBehaviour
     private float currentSeconds;
     private Coroutine masterTimer;
     private Coroutine finalCountdown;
+    public static event Action timerEnded;
 
     private void Start()
     {
@@ -80,6 +82,8 @@ public class GameTimerController : MonoBehaviour
 
         rightFill.fillAmount = 0f;
         leftFill.fillAmount = 0f;
+
+        timerEnded?.Invoke();
 
         if(finalCountdown != null)  StopCoroutine(finalCountdown);
         StopCoroutine(masterTimer);

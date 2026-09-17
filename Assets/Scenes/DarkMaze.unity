@@ -5641,8 +5641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747a78a193c1ef64982ed22b5fbdf560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minutes: 0
-  seconds: 20
+  minutes: 5
+  seconds: 0
   rightFill: {fileID: 933092702}
   leftFill: {fileID: 1815739865}
   countdownTimer: {fileID: 55080038}
@@ -5664,6 +5664,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c7c0a25c17a86409068240b16a482a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  endGameUI: {fileID: 1991940036}
+  p1Fill: {fileID: 683525114}
+  p2Fill: {fileID: 1068741099}
+  p1Win: {fileID: 593917167}
+  p2Win: {fileID: 1225203872}
+  buttons:
+  - {fileID: 1985471683}
+  - {fileID: 1538840960}
+  fillSpeed: 0.5
+  preFillWaitDuration: 1
+  postFillWaitDuration: 1
 --- !u!1 &859880875
 GameObject:
   m_ObjectHideFlags: 0
@@ -13781,7 +13792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1991940037
 RectTransform:
   m_ObjectHideFlags: 0

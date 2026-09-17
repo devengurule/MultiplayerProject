@@ -6,11 +6,14 @@ public class CoinCounterController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI p1Text;
     [SerializeField] private TextMeshProUGUI p2Text;
 
-    private int p1Counter = 0;
-    private int p2Counter = 0;
+    public int p1Counter { get; private set; }
+    public int p2Counter { get; private set; }
 
     private void Awake()
     {
+        p1Counter = 0;
+        p2Counter = 0;
+
         UpdateCoinCounter(p1Text, p1Counter);
         UpdateCoinCounter(p2Text, p2Counter);
     }
