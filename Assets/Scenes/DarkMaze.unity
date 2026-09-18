@@ -5570,8 +5570,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   coinPrefab: {fileID: 241734834528765025, guid: 94a64adaa8e178c448c950193ae3e69f, type: 3}
-  spawnChance: 0.1
-  coinFolder: {fileID: 1779445090}
+  healPrefab: {fileID: 241734834528765025, guid: 5b33e4dadbfc4644093f48f75b76b62a, type: 3}
+  autoPrefab: {fileID: 241734834528765025, guid: f4a5ad4cf1ab43e47a5019f4983f4c06, type: 3}
+  coinChance: 0.1
+  healChance: 0.01
+  autoChance: 0.005
+  collectibleFolder: {fileID: 1779445090}
 --- !u!114 &859329508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5588,6 +5592,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 24960
   gridDimensions: {x: 37, y: 37}
+  reCheckGridChance: 0
 --- !u!114 &859329509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5641,8 +5646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747a78a193c1ef64982ed22b5fbdf560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minutes: 5
-  seconds: 0
+  minutes: 2
+  seconds: 30
   rightFill: {fileID: 933092702}
   leftFill: {fileID: 1815739865}
   countdownTimer: {fileID: 55080038}
@@ -11390,6 +11395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779445090}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: coinEjectPercent
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: floatNumberController
       value: 
       objectReference: {fileID: 1888707405}
@@ -11423,7 +11432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7486963233040594879, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: vignettePowerMinMax.y
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7900135989589629895, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
@@ -11808,7 +11817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779445091}
   m_Layer: 0
-  m_Name: Coins
+  m_Name: Collectibles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14991,6 +15000,10 @@ PrefabInstance:
       propertyPath: coinFolder
       value: 
       objectReference: {fileID: 1779445090}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: coinEjectPercent
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: collectorPopupPrefab
       value: 

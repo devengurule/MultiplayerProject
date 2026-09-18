@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GridController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GridController : MonoBehaviour
 
     [Header("Grid Coordinates")]
     [SerializeField] private Vector2Int gridDimensions;
+    [SerializeField] private float reCheckGridChance;
 
     public static bool[,] grid { get; private set; }
 
@@ -18,8 +20,14 @@ public class GridController : MonoBehaviour
         InitializeGrid();
     }
 
+    private void Update()
+    {
+        if (Random.Range(0f, 1f) <= reCheckGridChance) InitializeGrid();
+    }
+
     private void InitializeGrid()
     {
+        Debug.Log("InitalizeGrid");
         grid = new bool[gridDimensions.x, gridDimensions.y];
 
         for (int y = 0; y < gridDimensions.y; y++)
