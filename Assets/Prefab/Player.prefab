@@ -368,6 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoinCollector
   coinPrefab: {fileID: 241734834528765025, guid: 94a64adaa8e178c448c950193ae3e69f, type: 3}
   coinFolder: {fileID: 0}
+  coinEjectPercent: 0.5
   coinEjectForce: {x: 1, y: 3}
   floatNumberController: {fileID: 0}
 --- !u!114 &7486963233040594879
