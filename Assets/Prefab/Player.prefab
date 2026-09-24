@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77de8d782f257c44b8d5e4ec8c58e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  vignettePowerMinMax: {x: 2, y: 10}
+  vignettePowerMinMax: {x: 1, y: 4}
   vignetteMaterial: {fileID: 0}
 --- !u!114 &7356810897477167903
 MonoBehaviour:
