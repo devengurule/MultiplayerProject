@@ -6,6 +6,14 @@ public class Collectible : MonoBehaviour
     [SerializeField] private Color particleColor;
     [SerializeField] private ParticleSystem deathParticles;
 
+    private void Start()
+    {
+        var main = deathParticles.main;
+        main.startColor = particleColor;
+
+        deathParticles.Play();
+    }
+
     public void DestroySequence()
     {
         var main = deathParticles.main;

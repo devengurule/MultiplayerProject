@@ -21,8 +21,6 @@ public class CollectibleSpawner : MonoBehaviour
     {
         List<Vector2Int> spawnPosList = ShuffleSpawnQueue(GetSpawnQueueList());
 
-        Debug.Log(spawnPosList.Count);
-
         foreach (CollectibleSO collectible in collectibles)
         {
             int currentSpawnedAmount = GetCurrentSpawnedAmount(collectible);
@@ -109,6 +107,5 @@ public class CollectibleSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnDelay);
         ReInitalizeGrid?.Invoke();
-        Debug.Log("Respawning");
     }
 }

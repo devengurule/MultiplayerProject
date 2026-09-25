@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,8 @@ public class InputHandler : MonoBehaviour
 
     private Controls controls;
     private PlayerInfo playerInfo;
+    private bool isHeld;
+    public event Action fireGun;
 
     private void Awake()
     {
@@ -29,7 +32,14 @@ public class InputHandler : MonoBehaviour
 
         controls.Player.Flashlight.canceled += OnFlashlightCancelled;
 
+        controls.Player.Shoot.started += OnShootStarted;
         controls.Player.Shoot.performed += OnShootPerformed;
+        controls.Player.Shoot.canceled += OnShootCanceled;
+    }
+
+    private void Update()
+    {
+        if(isHeld && GetComponent<Gun>().fullAuto) fireGun?.Invoke();
     }
 
     private void OnEnable()
@@ -74,10 +84,22 @@ public class InputHandler : MonoBehaviour
     {
         flashlightToggle = !flashlightToggle;
     }
+    private void OnShootStarted(InputAction.CallbackContext context)
+    {
+        isHeld = true;
+    }
 
     private void OnShootPerformed(InputAction.CallbackContext context)
     {
-        GetComponent<Gun>().SpawnBullet();
+        if (!GetComponent<Gun>().fullAuto)
+        {
+            isHeld = false;
+            fireGun?.Invoke();
+        }
+    }
+    private void OnShootCanceled(InputAction.CallbackContext context)
+    {
+        if(GetComponent<Gun>().fullAuto) isHeld = false;
     }
 
     private void OnGameEnd()

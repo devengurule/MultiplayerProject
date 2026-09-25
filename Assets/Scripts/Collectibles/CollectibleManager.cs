@@ -40,6 +40,9 @@ public class CollectibleManager : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("FullAuto") && !GetComponent<StunController>().isStunned)
         {
+            //if (GetComponent<Gun>().fullAuto) return;
+
+            GetComponent<Gun>().TurnOnFullAuto();
             other.gameObject.GetComponent<Collectible>().DestroySequence();
             floatNumberController.SpawnFullAutoPopup();
         }

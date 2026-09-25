@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 859329513}
         m_TargetAssemblyTypeName: GameEndHandler, Assembly-CSharp
         m_MethodName: Replay
         m_Mode: 1
@@ -4505,6 +4505,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6767917778963803592, guid: 91f3f95724cdf99488ec594f0dbe1011, type: 3}
   m_PrefabInstance: {fileID: 585667112}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &598420541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598420542}
+  - component: {fileID: 598420544}
+  - component: {fileID: 598420543}
+  m_Layer: 5
+  m_Name: P2FullAuto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &598420542
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598420541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008568486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -51, y: 130}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &598420543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598420541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6981132, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1800342736, guid: cf0f76a81262d2044a584f397a3354e3, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 2
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &598420544
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598420541}
+  m_CullTransparentMesh: 1
 --- !u!20 &603814966 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6884832135917284021, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
@@ -6062,6 +6137,7 @@ GameObject:
   - component: {fileID: 859329509}
   - component: {fileID: 859329510}
   - component: {fileID: 859329512}
+  - component: {fileID: 859329513}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -6101,7 +6177,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a715e995ceb7aed439ea0ef0c83fd314, type: 2}
   - {fileID: 11400000, guid: aaa5fed39f0177b47b290e6d23f5d69d, type: 2}
   collectibleFolder: {fileID: 1779445090}
-  respawnDelay: 15
+  respawnDelay: 20
 --- !u!114 &859329508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6146,7 +6222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   <maxPlayerHealth>k__BackingField: 3
   <bulletDamage>k__BackingField: 1
+  <bulletCooldown>k__BackingField: 0.5
   <knockbackForce>k__BackingField: 5
+  <fullAutoBullets>k__BackingField: 20
+  <fullAutoCooldown>k__BackingField: 0.2
 --- !u!114 &859329512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6170,6 +6249,29 @@ MonoBehaviour:
   activePos: {fileID: 874263631}
   startColor: {r: 0.4862745, g: 0.4862745, b: 0.4862745, a: 1}
   endColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &859329513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859329505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c7c0a25c17a86409068240b16a482a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  endGameUI: {fileID: 1307338449}
+  p1Fill: {fileID: 783638013}
+  p2Fill: {fileID: 390450640}
+  p1Win: {fileID: 2073890057}
+  p2Win: {fileID: 28106519}
+  buttons:
+  - {fileID: 1777588020}
+  - {fileID: 131266416}
+  fillSpeed: 0.5
+  preFillWaitDuration: 1
+  postFillWaitDuration: 1
 --- !u!1 &874263630
 GameObject:
   m_ObjectHideFlags: 0
@@ -8234,7 +8336,7 @@ GameObject:
   - component: {fileID: 1217901356}
   - component: {fileID: 1217901355}
   m_Layer: 5
-  m_Name: Image
+  m_Name: P1FullAuto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8254,9 +8356,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2008568486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 51, y: 130}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217901355
@@ -8284,7 +8386,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -11520,6 +11622,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 4304845727541704000, guid: cbfa48399b953674fb542718e836e753, type: 3}
+    - target: {fileID: 715979171715096573, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: fullAutoFillBar
+      value: 
+      objectReference: {fileID: 598420543}
     - target: {fileID: 724599570149526253, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -12121,7 +12227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 859329513}
         m_TargetAssemblyTypeName: GameEndHandler, Assembly-CSharp
         m_MethodName: Main
         m_Mode: 1
@@ -13939,6 +14045,7 @@ RectTransform:
   - {fileID: 1071732289}
   - {fileID: 1307338450}
   - {fileID: 1217901354}
+  - {fileID: 598420542}
   m_Father: {fileID: 988556572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15050,6 +15157,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 4304845727541704000, guid: c5ba8394746c7f2408f0a32ffc384678, type: 3}
+    - target: {fileID: 715979171715096573, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: fullAutoFillBar
+      value: 
+      objectReference: {fileID: 1217901355}
     - target: {fileID: 724599570149526253, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
       value: 7
