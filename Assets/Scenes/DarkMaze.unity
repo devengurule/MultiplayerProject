@@ -12619,6 +12619,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: collectibleFolder
+      value: 
+      objectReference: {fileID: 1779445090}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: floatNumberController
       value: 
       objectReference: {fileID: 1888707405}
@@ -12660,7 +12664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904842141327704369, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.000004
+      value: 14.000004
       objectReference: {fileID: 0}
     - target: {fileID: 7904842141327704369, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12668,7 +12672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904842141327704369, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7904842141327704369, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16514,6 +16518,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: collectibleFolder
+      value: 
+      objectReference: {fileID: 1779445090}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: collectorPopupPrefab
       value: 
       objectReference: {fileID: 4157437222631378267, guid: 0ee5f271a2a26c74d856ab7522585c54, type: 3}
@@ -16541,6 +16549,14 @@ PrefabInstance:
       propertyPath: vignetterMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 9d6406899099a084e9f5b40162cc068b, type: 2}
+    - target: {fileID: 7486963233040594879, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: vignettePowerMinMax.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486963233040594879, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: vignettePowerMinMax.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7900135989589629895, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
       value: 9
