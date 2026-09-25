@@ -12,6 +12,7 @@ public class InputHandler : MonoBehaviour
     private PlayerInfo playerInfo;
     private bool isHeld;
     public event Action fireGun;
+    public static event Action PauseGame;
 
     private void Awake()
     {
@@ -35,11 +36,13 @@ public class InputHandler : MonoBehaviour
         controls.Player.Shoot.started += OnShootStarted;
         controls.Player.Shoot.performed += OnShootPerformed;
         controls.Player.Shoot.canceled += OnShootCanceled;
+
+        controls.Player.Pause.performed += OnPause;
     }
 
     private void Update()
     {
-        if(isHeld && GetComponent<Gun>().fullAuto) fireGun?.Invoke();
+        if (isHeld && GetComponent<Gun>().fullAuto) fireGun?.Invoke();
     }
 
     private void OnEnable()
@@ -69,8 +72,6 @@ public class InputHandler : MonoBehaviour
     {
         movingInput = 0f;
     }
-
-
     private void OnTurningPerformed(InputAction.CallbackContext context)
     {
         turningInput = context.ReadValue<float>();
@@ -79,7 +80,6 @@ public class InputHandler : MonoBehaviour
     {
         turningInput = 0f;
     }
-
     private void OnFlashlightCancelled(InputAction.CallbackContext context)
     {
         flashlightToggle = !flashlightToggle;
@@ -88,7 +88,6 @@ public class InputHandler : MonoBehaviour
     {
         isHeld = true;
     }
-
     private void OnShootPerformed(InputAction.CallbackContext context)
     {
         if (!GetComponent<Gun>().fullAuto)
@@ -99,11 +98,17 @@ public class InputHandler : MonoBehaviour
     }
     private void OnShootCanceled(InputAction.CallbackContext context)
     {
-        if(GetComponent<Gun>().fullAuto) isHeld = false;
+        if (GetComponent<Gun>().fullAuto) isHeld = false;
+    }
+    private void OnPause(InputAction.CallbackContext context)
+    {
+        PauseGame?.Invoke();
     }
 
     private void OnGameEnd()
     {
         gameObject.SetActive(false);
     }
+
+    
 }

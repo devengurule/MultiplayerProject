@@ -19,7 +19,7 @@ public class CoinRotation : MonoBehaviour
         transformRotation = transform.eulerAngles;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transformRotation += rotation;
 

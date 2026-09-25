@@ -18,6 +18,8 @@ public class Gun : MonoBehaviour
 
     public void SpawnBullet()
     {
+        if (GameController.instance.isPaused) return;
+
         if (canShoot)
         {
             if (fullAuto)

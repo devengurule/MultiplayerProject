@@ -19,6 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameController.instance.isPaused)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
         if (!GetComponent<StunController>().isStunned)
         {
             Movement();
@@ -28,12 +34,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
+        if (GameController.instance.isPaused) return;
+
         Vector3 moveVector = new(transform.forward.x * input.movingInput, 0, transform.forward.z * input.movingInput);
         rb.linearVelocity = moveVector * moveSpeed;
     }
 
     private void Turning()
     {
+        if (GameController.instance.isPaused) return;
+
         Vector3 torqueVector = new(0, input.turningInput * turnSpeed, 0);
 
         rb.AddTorque(torqueVector);
@@ -50,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Knockback(Vector3 direction, float force)
     {
+        if (GameController.instance.isPaused) return;
+
         rb.AddForce((direction * force) + rb.linearVelocity.normalized, ForceMode.Impulse);
     }
 }
