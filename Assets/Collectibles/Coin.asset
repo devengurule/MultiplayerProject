@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f200ffca92e0f4f89726a7213ef2aa, type: 3}
+  m_Name: Coin
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleSO
+  prefab: {fileID: 241734834528765025, guid: 94a64adaa8e178c448c950193ae3e69f, type: 3}
+  spawnAmount: 90
+  repawnPercent: 0.7

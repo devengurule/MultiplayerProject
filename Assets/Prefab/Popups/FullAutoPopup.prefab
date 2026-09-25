@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8962312723760366828}
   - component: {fileID: 4482824196033451307}
   m_Layer: 17
-  m_Name: CollectorPopup
+  m_Name: FullAutoPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +1
+  m_text: <FULL AUTO>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 250bf4013d701ae46a7f70f0aaa36c97, type: 2}
   m_sharedMaterial: {fileID: -1783309649632517856, guid: 250bf4013d701ae46a7f70f0aaa36c97, type: 2}
@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286183167
-  m_fontColor: {r: 1, g: 0.9640993, b: 0.47358483, a: 1}
+    rgba: 4283583999
+  m_fontColor: {r: 1, g: 0.301, b: 0.32186583, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.75
+  m_fontSizeBase: 0.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -150,5 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fa8eeee621b0343a8425cc5fd43447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  verticalMoveSpeed: 0.05
+  verticalMoveSpeed: 0.01
   alphaLossRate: 0.05

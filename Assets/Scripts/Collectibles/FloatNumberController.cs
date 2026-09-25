@@ -2,19 +2,29 @@ using UnityEngine;
 
 public class FloatNumberController : MonoBehaviour
 {
-    [SerializeField] private GameObject collectorPopupPrefab;
+    [SerializeField] private GameObject coinPopupPrefab;
     [SerializeField] private GameObject lossPopupPrefab;
+    [SerializeField] private GameObject hpPopupPrefab;
+    [SerializeField] private GameObject fullAutoPopupPrefab;
     [SerializeField] private GameObject targetObject;
 
     [SerializeField] private Vector2 spawnPosRange;
 
-    public void SpawnCollectorPopup()
+    public void SpawnCoinPopup()
     {
-        SpawnPopup(collectorPopupPrefab);
+        SpawnPopup(coinPopupPrefab);
     }
     public void SpawnLossPopup()
     {
         SpawnPopup(lossPopupPrefab);
+    }
+    public void SpawnHPPopup()
+    {
+        SpawnPopup(hpPopupPrefab);
+    }
+    public void SpawnFullAutoPopup()
+    {
+        SpawnPopup(fullAutoPopupPrefab);
     }
 
     private void SpawnPopup(GameObject prefab)

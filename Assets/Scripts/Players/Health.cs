@@ -31,7 +31,13 @@ public class Health : MonoBehaviour
         vignetteMaterial.SetFloat("_Power", vignettePowerMinMax.y);
     }
 
-    public void ChangeHealth(int amount)
+    public void Heal(int amount)
+    {
+        health += amount;
+        UpdateVignette();
+    }
+
+    public void TakeDamage(int amount)
     {
         if (GetComponent<StunController>().isStunned) return;
         if (isInvulnerable) return;
@@ -133,5 +139,10 @@ public class Health : MonoBehaviour
     public void ResetVulnerability()
     {
         isInvulnerable = false;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return health;
     }
 }

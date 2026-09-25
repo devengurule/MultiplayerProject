@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CoinCollector : MonoBehaviour
+public class CollectibleManager : MonoBehaviour
 {
     [SerializeField] private GameObject coinPrefab;
-    [SerializeField] private GameObject coinFolder;
+    [SerializeField] private GameObject collectibleFolder;
     [SerializeField, Range(0f, 1f)] private float coinEjectPercent;
     [SerializeField] private Vector2 coinEjectForce;
     [SerializeField] private FloatNumberController floatNumberController;
@@ -24,8 +24,24 @@ public class CoinCollector : MonoBehaviour
         if (other.gameObject.CompareTag("Coin") && !GetComponent<StunController>().isStunned)
         {
             GameController.instance.GetComponent<CoinCounterController>().RequestCoinCounterUpdate(GetComponent<PlayerInfo>().playerSlot, 1);
-            other.gameObject.GetComponent<Coin>().DestroySequence();
-            floatNumberController.SpawnCollectorPopup();
+            
+            other.gameObject.GetComponent<Collectible>().DestroySequence();
+
+            floatNumberController.SpawnCoinPopup();
+        }
+        else if (other.gameObject.CompareTag("Health") && !GetComponent<StunController>().isStunned)
+        {
+            if (GetComponent<Health>().GetCurrentHealth() >= GameController.instance.maxPlayerHealth) return;
+            GetComponent<Health>().Heal(1);
+
+            other.gameObject.GetComponent<Collectible>().DestroySequence();
+
+            floatNumberController.SpawnHPPopup();
+        }
+        else if (other.gameObject.CompareTag("FullAuto") && !GetComponent<StunController>().isStunned)
+        {
+            other.gameObject.GetComponent<Collectible>().DestroySequence();
+            floatNumberController.SpawnFullAutoPopup();
         }
     }
 
@@ -51,7 +67,7 @@ public class CoinCollector : MonoBehaviour
         {
             GameObject coin = Instantiate(coinPrefab, new(transform.position.x, 0.25f, transform.position.z), Quaternion.identity);
             coin.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized * Random.Range(coinEjectForce.x, coinEjectForce.y), ForceMode.Impulse);
-            coin.transform.parent = coinFolder.transform;
+            coin.transform.parent = collectibleFolder.transform;
             floatNumberController.SpawnLossPopup();
         }
     }

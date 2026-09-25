@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
 
                 Vector3 knockbackDirection = (other.gameObject.transform.position - transform.position).normalized;
 
-                other.gameObject.GetComponent<Health>().ChangeHealth(-GameController.instance.bulletDamage);
+                other.gameObject.GetComponent<Health>().TakeDamage(-GameController.instance.bulletDamage);
                 other.gameObject.GetComponent<PlayerMovement>().Knockback(knockbackDirection, GameController.instance.knockbackForce);
 
                 DestroySequence();

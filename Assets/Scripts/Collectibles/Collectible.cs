@@ -1,12 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Collectible : MonoBehaviour
 {
+    [SerializeField] private Color particleColor;
     [SerializeField] private ParticleSystem deathParticles;
 
     public void DestroySequence()
     {
+        var main = deathParticles.main;
+        main.startColor = particleColor;
+
         foreach (SphereCollider collider in gameObject.GetComponents<SphereCollider>())
         {
             collider.enabled = false;

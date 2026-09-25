@@ -6061,7 +6061,6 @@ GameObject:
   - component: {fileID: 859329508}
   - component: {fileID: 859329509}
   - component: {fileID: 859329510}
-  - component: {fileID: 859329511}
   - component: {fileID: 859329512}
   m_Layer: 0
   m_Name: GameController
@@ -6097,9 +6096,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0bd3be8156478641bfa996c7787bb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  coinPrefab: {fileID: 241734834528765025, guid: 94a64adaa8e178c448c950193ae3e69f, type: 3}
-  spawnChance: 0.1
-  coinFolder: {fileID: 1779445090}
+  collectibles:
+  - {fileID: 11400000, guid: f424bdccee990304ebed73df732abed2, type: 2}
+  - {fileID: 11400000, guid: a715e995ceb7aed439ea0ef0c83fd314, type: 2}
+  - {fileID: 11400000, guid: aaa5fed39f0177b47b290e6d23f5d69d, type: 2}
+  collectibleFolder: {fileID: 1779445090}
+  respawnDelay: 15
 --- !u!114 &859329508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6114,7 +6116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 24960
+    m_Bits: 2122112
   gridDimensions: {x: 37, y: 37}
 --- !u!114 &859329509
 MonoBehaviour:
@@ -6145,18 +6147,6 @@ MonoBehaviour:
   <maxPlayerHealth>k__BackingField: 3
   <bulletDamage>k__BackingField: 1
   <knockbackForce>k__BackingField: 5
---- !u!114 &859329511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859329505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9651fd31ca44eba49a8c1a63fa2576e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!114 &859329512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8232,6 +8222,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6767917778963803592, guid: 91f3f95724cdf99488ec594f0dbe1011, type: 3}
   m_PrefabInstance: {fileID: 1194860710}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1217901353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217901354}
+  - component: {fileID: 1217901356}
+  - component: {fileID: 1217901355}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1217901354
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217901353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008568486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -50, y: 50}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1217901355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217901353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6981132, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1800342736, guid: cf0f76a81262d2044a584f397a3354e3, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 2
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1217901356
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217901353}
+  m_CullTransparentMesh: 1
 --- !u!1 &1230413205
 GameObject:
   m_ObjectHideFlags: 0
@@ -11511,6 +11576,10 @@ PrefabInstance:
       propertyPath: m_IsGlobal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3604955440759225905, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3847062204381192802, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -11593,6 +11662,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: coinFolder
+      value: 
+      objectReference: {fileID: 1779445090}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: collectibleFolder
       value: 
       objectReference: {fileID: 1779445090}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
@@ -12108,7 +12181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779445091}
   m_Layer: 0
-  m_Name: Coins
+  m_Name: Collectibles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13865,6 +13938,7 @@ RectTransform:
   - {fileID: 369286275}
   - {fileID: 1071732289}
   - {fileID: 1307338450}
+  - {fileID: 1217901354}
   m_Father: {fileID: 988556572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15029,8 +15103,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 603814966}
     - target: {fileID: 2983778995813944113, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: 'm_Cameras.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2983778995813944113, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_VolumeLayerMask.m_Bits
       value: 524288
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604955440759225905, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: flashlight
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4391939917945544466, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: m_Name
@@ -15098,6 +15180,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
       propertyPath: coinFolder
+      value: 
+      objectReference: {fileID: 1779445090}
+    - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}
+      propertyPath: collectibleFolder
       value: 
       objectReference: {fileID: 1779445090}
     - target: {fileID: 6738004219998830884, guid: 6cb2fb6b7fa620046a25c23a863724b2, type: 3}

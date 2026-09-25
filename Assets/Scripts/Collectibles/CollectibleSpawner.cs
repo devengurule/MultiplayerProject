@@ -1,41 +1,49 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CollectibleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject coinPrefab;
-    [SerializeField] private GameObject healPrefab;
-    [SerializeField] private GameObject autoPrefab;
-    [SerializeField] private float coinChance;
-    [SerializeField] private float healChance;
-    [SerializeField] private float autoChance;
+    [Tooltip("Elements indexed closer to 0 have greater spawn priority")]
+    [SerializeField] private CollectibleSO[] collectibles;
     [SerializeField] private GameObject collectibleFolder;
+    [SerializeField] private float respawnDelay;
 
-    private List<Vector2Int> spawnQueueList = new();
+    public static event Action ReInitalizeGrid;
 
-    private void OnEnable() => GridController.OnGridInitalized += SpawnCollectibles;
+    private void OnEnable() => GetComponent<GridController>().OnGridInitalized += SpawnCollectibles;
 
-    private void OnDisable() => GridController.OnGridInitalized -= SpawnCollectibles;
+    private void OnDisable() => GetComponent<GridController>().OnGridInitalized -= SpawnCollectibles;
 
     private void SpawnCollectibles()
     {
-        Vector2Int gridDimensions = new(GridController.grid.GetLength(0), GridController.grid.GetLength(1));
+        List<Vector2Int> spawnPosList = ShuffleSpawnQueue(GetSpawnQueueList());
 
-        for (int y = 0; y < gridDimensions.y; y++)
+        Debug.Log(spawnPosList.Count);
+
+        foreach (CollectibleSO collectible in collectibles)
         {
-            for (int x = 0; x < gridDimensions.x; x++)
+            int currentSpawnedAmount = GetCurrentSpawnedAmount(collectible);
+
+            if (currentSpawnedAmount < collectible.spawnAmount)
             {
-                if (GridController.grid[x, y])
+                int spawnAmount;
+
+                if (currentSpawnedAmount == 0) spawnAmount = collectible.spawnAmount;
+                else spawnAmount = (int)((collectible.spawnAmount - currentSpawnedAmount) * collectible.repawnPercent);
+
+                for (int i = 0; i < spawnAmount; i++)
                 {
-                    spawnQueueList.Add(new Vector2Int(x, y));
+                    if (spawnPosList.Count <= 0) return;
+                    InstantiateCollectible(collectible, spawnPosList[0]);
+                    spawnPosList.RemoveAt(0);
                 }
             }
         }
 
-        foreach(Vector2Int item in ShuffleSpawnQueue(spawnQueueList))
-        {
-            InstantiateCollectible(item.x, item.y);
-        }
+        StartCoroutine(RespawnTimer());
     }
 
     private List<Vector2Int> ShuffleSpawnQueue(List<Vector2Int> list)
@@ -51,27 +59,56 @@ public class CollectibleSpawner : MonoBehaviour
         return list;
     }
 
-    private void InstantiateCollectible(int x, int z)
+    private List<Vector2Int> GetSpawnQueueList()
     {
-        //auto
-        if (Random.Range(0f, 1f) <= autoChance)
+        List<Vector2Int> spawnQueueList = new();
+
+        Vector2Int gridDimensions = new(GetComponent<GridController>().grid.GetLength(0), GetComponent<GridController>().grid.GetLength(1));
+
+        for (int y = 0; y < gridDimensions.y; y++)
         {
-            GameObject auto = Instantiate(autoPrefab, new(x, 0.25f, z), Quaternion.identity);
-            auto.transform.parent = collectibleFolder.transform;
+            for (int x = 0; x < gridDimensions.x; x++)
+            {
+                if (GetComponent<GridController>().grid[x, y])
+                {
+                    spawnQueueList.Add(new Vector2Int(x, y));
+                }
+            }
         }
-        //heal
-        else if (Random.Range(0f, 1f) <= healChance)
+
+        //foreach(Vector2Int vector in spawnQueueList)
+        //{
+        //    Debug.Log(vector);
+        //}
+
+        return spawnQueueList;
+    }
+
+    private int GetCurrentSpawnedAmount(CollectibleSO collectible)
+    {
+        int counter = 0;
+
+        foreach(Transform obj in collectibleFolder.transform)
         {
-            GameObject heal = Instantiate(healPrefab, new(x, 0.25f, z), Quaternion.identity);
-            heal.transform.parent = collectibleFolder.transform;
+            if(obj.gameObject.tag == collectible.prefab.tag)
+            {
+                counter++;
+            }
         }
-        //coin
-        else if (Random.Range(0f, 1f) <= coinChance)
-        {
-            GameObject coin = Instantiate(coinPrefab, new(x, 0.25f, z), Quaternion.identity);
-            coin.transform.parent = collectibleFolder.transform;
-        }
-        
-        
+
+        return counter;
+    }
+
+    private void InstantiateCollectible(CollectibleSO collectible, Vector2Int position)
+    {
+        GameObject obj = Instantiate(collectible.prefab, new(position.x, 0.25f, position.y), Quaternion.identity);
+        obj.transform.parent = collectibleFolder.transform;
+    }
+
+    private IEnumerator RespawnTimer()
+    {
+        yield return new WaitForSeconds(respawnDelay);
+        ReInitalizeGrid?.Invoke();
+        Debug.Log("Respawning");
     }
 }
