@@ -8,6 +8,8 @@ public class Collectible : MonoBehaviour
 
     private void Start()
     {
+        if (deathParticles == null) return;
+
         var main = deathParticles.main;
         main.startColor = particleColor;
 
@@ -16,6 +18,8 @@ public class Collectible : MonoBehaviour
 
     public void DestroySequence()
     {
+        if (deathParticles == null) return;
+
         var main = deathParticles.main;
         main.startColor = particleColor;
 
